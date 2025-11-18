@@ -66,7 +66,6 @@ const Index = () => {
                 <h2 className="text-xl font-semibold mb-2">Product Details</h2>
                 <ProductDetails product={selectedProduct} />
               </Card>
-              {/* Moved CartControls here for mobile view */}
               <CartControls
                 selectedProduct={selectedProduct}
                 quantity={quantity}
@@ -84,7 +83,18 @@ const Index = () => {
                 <h2 className="text-xl font-semibold mb-2">Cart</h2>
                 <CartTable cart={cart} className="h-full" />
               </Card>
-              {/* CartControls removed from here */}
+              {/* CartControls added back here for mobile view */}
+              <CartControls
+                selectedProduct={selectedProduct}
+                quantity={quantity}
+                total={total}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+                checkout={checkout}
+                cartIsEmpty={cart.length === 0}
+              />
             </TabsContent>
           </Tabs>
         </div>
