@@ -11,14 +11,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils"; // Import cn for utility classes
 
 interface CartTableProps {
   cart: CartItem[];
+  className?: string; // Added className prop
 }
 
-const CartTable: React.FC<CartTableProps> = ({ cart }) => {
+const CartTable: React.FC<CartTableProps> = ({ cart, className }) => { // Destructure className
   return (
-    <ScrollArea className="h-[300px] md:h-[calc(100vh-280px)] w-full rounded-lg border bg-card shadow-sm">
+    <ScrollArea className={cn("h-[300px] md:h-[calc(100vh-280px)] w-full rounded-lg border bg-card shadow-sm", className)}>
       <Table>
         <TableHeader>
           <TableRow>
