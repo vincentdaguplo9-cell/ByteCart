@@ -78,6 +78,7 @@ const Index = () => {
                 removeFromCart={removeFromCart}
                 checkout={checkout}
                 cartIsEmpty={cart.length === 0}
+                cart={cart} // Pass the cart prop here
               />
             </TabsContent>
             <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
@@ -100,6 +101,7 @@ const Index = () => {
                 removeFromCart={removeFromCart}
                 checkout={checkout}
                 cartIsEmpty={cart.length === 0}
+                cart={cart} // Pass the cart prop here
               />
             </TabsContent>
           </Tabs>
@@ -146,6 +148,7 @@ const Index = () => {
                 removeFromCart={removeFromCart}
                 checkout={checkout}
                 cartIsEmpty={cart.length === 0}
+                cart={cart} // Pass the cart prop here
               />
             </div>
           </div>

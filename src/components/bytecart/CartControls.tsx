@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Product } from "@/data/products";
 import { Minus, Plus, ShoppingCart, Trash2, CheckCircle } from "lucide-react";
+import { CartItem } from "@/hooks/useByteCart"; // Import CartItem
 
 interface CartControlsProps {
   selectedProduct: Product | null;
@@ -16,6 +17,7 @@ interface CartControlsProps {
   removeFromCart: (productId: string) => void;
   checkout: () => void;
   cartIsEmpty: boolean;
+  cart: CartItem[]; // Add cart prop here
 }
 
 const CartControls: React.FC<CartControlsProps> = ({
@@ -28,6 +30,7 @@ const CartControls: React.FC<CartControlsProps> = ({
   removeFromCart,
   checkout,
   cartIsEmpty,
+  cart, // Destructure cart prop
 }) => {
   return (
     <div className="p-2 md:p-4 bg-card rounded-lg shadow-sm flex flex-col gap-3">
