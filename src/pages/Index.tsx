@@ -81,9 +81,13 @@ const Index = () => {
             <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
               <Card className="p-2 bg-card shadow-sm flex-1 min-h-[200px]">
                 <h2 className="text-xl font-semibold mb-2">Cart</h2>
-                <CartTable cart={cart} className="h-full" />
+                <CartTable
+                  cart={cart}
+                  className="h-full"
+                  selectedProduct={selectedProduct} // Pass selectedProduct
+                  onItemSelect={handleProductSelect} // Pass handler for item selection
+                />
               </Card>
-              {/* CartControls added back here for mobile view */}
               <CartControls
                 selectedProduct={selectedProduct}
                 quantity={quantity}
@@ -122,7 +126,11 @@ const Index = () => {
             <div className="flex flex-col gap-4">
               <Card className="p-4 bg-card shadow-sm flex-1">
                 <h2 className="text-xl font-semibold mb-2">Cart</h2>
-                <CartTable cart={cart} />
+                <CartTable
+                  cart={cart}
+                  selectedProduct={selectedProduct} // Pass selectedProduct
+                  onItemSelect={handleProductSelect} // Pass handler for item selection
+                />
               </Card>
               <CartControls
                 selectedProduct={selectedProduct}
