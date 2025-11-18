@@ -27,16 +27,16 @@ const CartTable: React.FC<CartTableProps> = ({ cart, className, selectedProduct,
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Product</TableHead>
-            <TableHead className="text-right">Price</TableHead>
-            <TableHead className="text-right">Qty</TableHead>
-            <TableHead className="text-right">Subtotal</TableHead>
+            <TableHead className="text-xs">Product</TableHead>
+            <TableHead className="text-right text-xs">Price</TableHead>
+            <TableHead className="text-right text-xs">Qty</TableHead>
+            <TableHead className="text-right text-xs">Subtotal</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {cart.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={4} className="text-center text-muted-foreground py-4">
+              <TableCell colSpan={4} className="text-center text-muted-foreground py-4 text-xs">
                 Cart is empty.
               </TableCell>
             </TableRow>
@@ -50,10 +50,10 @@ const CartTable: React.FC<CartTableProps> = ({ cart, className, selectedProduct,
                 )}
                 onClick={() => onItemSelect(item)}
               >
-                <TableCell className="font-medium">{item.name}</TableCell>
-                <TableCell className="text-right">₱{item.price.toFixed(2)}</TableCell>
-                <TableCell className="text-right">{item.quantity}</TableCell>
-                <TableCell className="text-right">₱{item.subtotal.toFixed(2)}</TableCell>
+                <TableCell className="font-medium text-xs">{item.name}</TableCell>
+                <TableCell className="text-right text-xs">₱{item.price.toFixed(2)}</TableCell>
+                <TableCell className="text-right text-xs">{item.quantity}</TableCell>
+                <TableCell className="text-right text-xs">₱{item.subtotal.toFixed(2)}</TableCell>
               </TableRow>
             ))
           )}

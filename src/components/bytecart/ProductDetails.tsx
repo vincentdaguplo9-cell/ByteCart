@@ -13,11 +13,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     return (
       <Card className="w-full h-full bg-card shadow-sm">
         <CardHeader>
-          <CardTitle>Select a Product</CardTitle>
+          <CardTitle className="text-xl">Select a Product</CardTitle>
           <CardDescription>Details will appear here.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">No product selected.</p>
+          <p className="text-sm text-muted-foreground">No product selected.</p>
         </CardContent>
       </Card>
     );
@@ -26,7 +26,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
     <Card className="w-full h-full bg-card shadow-sm">
       <CardHeader>
-        <CardTitle>{product.name}</CardTitle>
+        <CardTitle className="text-xl">{product.name}</CardTitle>
         <CardDescription>₱{product.price.toFixed(2)}</CardDescription>
       </CardHeader>
       <CardContent>

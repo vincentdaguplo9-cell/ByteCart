@@ -35,7 +35,7 @@ const ProductList: React.FC<ProductListProps> = ({
               onClick={() => onProductSelect(product)}
             >
               <CardContent className="flex justify-between items-center p-3">
-                <span className="font-medium">{product.name}</span>
+                <span className="text-sm font-medium">{product.name}</span>
                 <span className="text-sm font-semibold">
                   ₱{product.price.toFixed(2)}
                 </span>

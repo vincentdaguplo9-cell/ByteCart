@@ -11,7 +11,6 @@ import { useByteCart } from "@/hooks/useByteCart";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ThemeToggle } from "@/components/ThemeToggle"; // Import ThemeToggle
 
 const Index = () => {
   const {
@@ -36,8 +35,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground p-2 md:p-4">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl md:text-4xl font-bold flex-1 text-center md:text-left">ByteCart POS</h1>
-        <ThemeToggle /> {/* Add ThemeToggle here */}
+        <h1 className="text-2xl md:text-3xl font-bold text-center flex-1">ByteCart POS</h1>
       </div>
 
       {/* Top: Category Dropdown (always visible) */}
@@ -58,7 +56,7 @@ const Index = () => {
             </TabsList>
             <TabsContent value="products" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
               <Card className="p-2 bg-card shadow-sm flex-1 flex flex-col">
-                <h2 className="text-xl font-semibold mb-2">Products</h2>
+                <h2 className="text-lg font-semibold mb-2">Products</h2>
                 <ProductList
                   products={availableProducts}
                   selectedProduct={selectedProduct}
@@ -67,7 +65,7 @@ const Index = () => {
                 />
               </Card>
               <Card className="p-2 bg-card shadow-sm">
-                <h2 className="text-xl font-semibold mb-2">Product Details</h2>
+                <h2 className="text-lg font-semibold mb-2">Product Details</h2>
                 <ProductDetails product={selectedProduct} />
               </Card>
               <CartControls
@@ -84,7 +82,7 @@ const Index = () => {
             </TabsContent>
             <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
               <Card className="p-2 bg-card shadow-sm flex-1 flex flex-col">
-                <h2 className="text-xl font-semibold mb-2">Cart</h2>
+                <h2 className="text-lg font-semibold mb-2">Cart</h2>
                 <CartTable
                   cart={cart}
                   className="flex-1"
@@ -113,7 +111,7 @@ const Index = () => {
             {/* Left Panel: Product List and Product Details */}
             <div className="flex flex-col gap-4">
               <Card className="p-4 bg-card shadow-sm flex-1 flex flex-col">
-                <h2 className="text-xl font-semibold mb-2">Products</h2>
+                <h2 className="text-lg font-semibold mb-2">Products</h2>
                 <ProductList
                   products={availableProducts}
                   selectedProduct={selectedProduct}
@@ -122,7 +120,7 @@ const Index = () => {
                 />
               </Card>
               <Card className="p-4 bg-card shadow-sm">
-                <h2 className="text-xl font-semibold mb-2">Product Details</h2>
+                <h2 className="text-lg font-semibold mb-2">Product Details</h2>
                 <ProductDetails product={selectedProduct} />
               </Card>
             </div>
@@ -130,7 +128,7 @@ const Index = () => {
             {/* Right Panel: Cart Table and Cart Controls */}
             <div className="flex flex-col gap-4">
               <Card className="p-4 bg-card shadow-sm flex-1 flex flex-col">
-                <h2 className="text-xl font-semibold mb-2">Cart</h2>
+                <h2 className="text-lg font-semibold mb-2">Cart</h2>
                 <CartTable
                   cart={cart}
                   selectedProduct={selectedProduct}

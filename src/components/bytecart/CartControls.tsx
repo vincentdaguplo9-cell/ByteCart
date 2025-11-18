@@ -68,13 +68,13 @@ const CartControls: React.FC<CartControlsProps> = ({
         >
           <Trash2 className="mr-2 h-4 w-4" /> Remove
         </Button>
-        <Button onClick={checkout} disabled={cartIsEmpty}>
+        <Button onClick={checkout} disabled={cart.length === 0}>
           <CheckCircle className="mr-2 h-4 w-4" /> Checkout
         </Button>
       </div>
 
       {/* Total Label */}
-      <div className="text-right text-2xl font-bold mt-2">
+      <div className="text-right text-xl font-bold mt-2">
         Total: ₱{total.toFixed(2)}
       </div>
     </div>
