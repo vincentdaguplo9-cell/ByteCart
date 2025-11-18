@@ -26,7 +26,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-8">ByteCart</h1>
       <div className="w-3/4 max-w-md text-center">
-        <p className="text-lg font-medium">Welcome</p>
+        {/* Removed the "Welcome" text */}
       </div>
       <div className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">Developed by:</p>
