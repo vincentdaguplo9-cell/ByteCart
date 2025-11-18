@@ -10,7 +10,7 @@ import CartControls from "@/components/bytecart/CartControls";
 import { useByteCart } from "@/hooks/useByteCart";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"; // Import Tabs components
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   const {
@@ -59,19 +59,14 @@ const Index = () => {
                   products={availableProducts}
                   selectedProduct={selectedProduct}
                   onProductSelect={handleProductSelect}
-                  className="h-full" // Make ScrollArea fill parent height
+                  className="h-full"
                 />
               </Card>
               <Card className="p-2 bg-card shadow-sm">
                 <h2 className="text-xl font-semibold mb-2">Product Details</h2>
                 <ProductDetails product={selectedProduct} />
               </Card>
-            </TabsContent>
-            <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
-              <Card className="p-2 bg-card shadow-sm flex-1 min-h-[200px]">
-                <h2 className="text-xl font-semibold mb-2">Cart</h2>
-                <CartTable cart={cart} className="h-full" /> {/* Make ScrollArea fill parent height */}
-              </Card>
+              {/* Moved CartControls here for mobile view */}
               <CartControls
                 selectedProduct={selectedProduct}
                 quantity={quantity}
@@ -83,6 +78,13 @@ const Index = () => {
                 checkout={checkout}
                 cartIsEmpty={cart.length === 0}
               />
+            </TabsContent>
+            <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
+              <Card className="p-2 bg-card shadow-sm flex-1 min-h-[200px]">
+                <h2 className="text-xl font-semibold mb-2">Cart</h2>
+                <CartTable cart={cart} className="h-full" />
+              </Card>
+              {/* CartControls removed from here */}
             </TabsContent>
           </Tabs>
         </div>
