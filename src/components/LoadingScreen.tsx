@@ -34,7 +34,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-foreground">
-      <h1 className="text-4xl font-bold mb-8">ByteCart PC Parts POS System</h1>
+      <h1 className="text-4xl font-bold mb-8">ByteCart</h1>
       <div className="w-3/4 max-w-md">
         <Progress value={progress} className="w-full h-3 mb-4" />
         <p className="text-center text-lg font-medium">{progress}% Loading...</p>
