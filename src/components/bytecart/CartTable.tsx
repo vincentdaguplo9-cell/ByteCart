@@ -11,19 +11,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils"; // Import cn for utility classes
-import { Product } from "@/data/products"; // Import Product type
+import { cn } from "@/lib/utils";
+import { Product } from "@/data/products";
 
 interface CartTableProps {
   cart: CartItem[];
   className?: string;
-  selectedProduct: Product | null; // Added selectedProduct prop
-  onItemSelect: (product: Product) => void; // Added onItemSelect prop
+  selectedProduct: Product | null;
+  onItemSelect: (product: Product) => void;
 }
 
 const CartTable: React.FC<CartTableProps> = ({ cart, className, selectedProduct, onItemSelect }) => {
   return (
-    <ScrollArea className={cn("h-[300px] md:h-[calc(100vh-280px)] w-full rounded-lg border bg-card shadow-sm", className)}>
+    <ScrollArea className={cn("flex-1 w-full rounded-lg border bg-card shadow-sm", className)}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -48,7 +48,7 @@ const CartTable: React.FC<CartTableProps> = ({ cart, className, selectedProduct,
                   "cursor-pointer hover:bg-accent transition-colors",
                   selectedProduct?.id === item.id && "bg-primary text-primary-foreground hover:bg-primary/90"
                 )}
-                onClick={() => onItemSelect(item)} // Call onItemSelect on row click
+                onClick={() => onItemSelect(item)}
               >
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell className="text-right">₱{item.price.toFixed(2)}</TableCell>

@@ -53,13 +53,13 @@ const Index = () => {
               <TabsTrigger value="cart">Cart ({cart.length})</TabsTrigger>
             </TabsList>
             <TabsContent value="products" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
-              <Card className="p-2 bg-card shadow-sm flex-1 min-h-[200px]">
+              <Card className="p-2 bg-card shadow-sm flex-1 flex flex-col">
                 <h2 className="text-xl font-semibold mb-2">Products</h2>
                 <ProductList
                   products={availableProducts}
                   selectedProduct={selectedProduct}
                   onProductSelect={handleProductSelect}
-                  className="h-full"
+                  className="flex-1"
                 />
               </Card>
               <Card className="p-2 bg-card shadow-sm">
@@ -79,13 +79,13 @@ const Index = () => {
               />
             </TabsContent>
             <TabsContent value="cart" className="flex-1 flex flex-col gap-4 mt-4 overflow-y-auto">
-              <Card className="p-2 bg-card shadow-sm flex-1 min-h-[200px]">
+              <Card className="p-2 bg-card shadow-sm flex-1 flex flex-col">
                 <h2 className="text-xl font-semibold mb-2">Cart</h2>
                 <CartTable
                   cart={cart}
-                  className="h-full"
-                  selectedProduct={selectedProduct} // Pass selectedProduct
-                  onItemSelect={handleProductSelect} // Pass handler for item selection
+                  className="flex-1"
+                  selectedProduct={selectedProduct}
+                  onItemSelect={handleProductSelect}
                 />
               </Card>
               <CartControls
@@ -108,12 +108,13 @@ const Index = () => {
           <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {/* Left Panel: Product List and Product Details */}
             <div className="flex flex-col gap-4">
-              <Card className="p-4 bg-card shadow-sm flex-1">
+              <Card className="p-4 bg-card shadow-sm flex-1 flex flex-col">
                 <h2 className="text-xl font-semibold mb-2">Products</h2>
                 <ProductList
                   products={availableProducts}
                   selectedProduct={selectedProduct}
                   onProductSelect={handleProductSelect}
+                  className="flex-1"
                 />
               </Card>
               <Card className="p-4 bg-card shadow-sm">
@@ -124,12 +125,13 @@ const Index = () => {
 
             {/* Right Panel: Cart Table and Cart Controls */}
             <div className="flex flex-col gap-4">
-              <Card className="p-4 bg-card shadow-sm flex-1">
+              <Card className="p-4 bg-card shadow-sm flex-1 flex flex-col">
                 <h2 className="text-xl font-semibold mb-2">Cart</h2>
                 <CartTable
                   cart={cart}
-                  selectedProduct={selectedProduct} // Pass selectedProduct
-                  onItemSelect={handleProductSelect} // Pass handler for item selection
+                  selectedProduct={selectedProduct}
+                  onItemSelect={handleProductSelect}
+                  className="flex-1"
                 />
               </Card>
               <CartControls

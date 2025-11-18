@@ -10,17 +10,17 @@ interface ProductListProps {
   products: Product[];
   selectedProduct: Product | null;
   onProductSelect: (product: Product) => void;
-  className?: string; // Added className prop
+  className?: string;
 }
 
 const ProductList: React.FC<ProductListProps> = ({
   products,
   selectedProduct,
   onProductSelect,
-  className, // Destructure className
+  className,
 }) => {
   return (
-    <ScrollArea className={cn("h-[300px] md:h-[calc(100vh-280px)] w-full rounded-lg border bg-card shadow-sm", className)}>
+    <ScrollArea className={cn("flex-1 w-full rounded-lg border bg-card shadow-sm", className)}>
       <div className="p-2">
         {products.length === 0 ? (
           <p className="text-center text-muted-foreground py-4">No products in this category.</p>
