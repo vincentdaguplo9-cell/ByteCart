@@ -11,6 +11,7 @@ import { useByteCart } from "@/hooks/useByteCart";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ThemeToggle } from "@/components/ThemeToggle"; // Import ThemeToggle
 
 const Index = () => {
   const {
@@ -34,7 +35,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground p-2 md:p-4">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">ByteCart POS</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-center flex-1">ByteCart POS</h1>
+        <ThemeToggle /> {/* Add ThemeToggle here */}
+      </div>
 
       {/* Top: Category Dropdown (always visible) */}
       <div className="mb-4">
