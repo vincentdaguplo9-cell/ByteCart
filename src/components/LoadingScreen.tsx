@@ -1,28 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Progress } from "@/components/ui/progress";
+import React, { useEffect } from "react";
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
-  const [progress, setProgress] = useState(0);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prevProgress) => {
-        if (prevProgress >= 100) {
-          clearInterval(interval);
-          onLoadingComplete();
-          return 100;
-        }
-        return prevProgress + 1; // Increment by 1%
-      });
-    }, 30); // Adjust speed here (e.g., 30ms for 3 seconds total)
+    const timer = setTimeout(() => {
+      onLoadingComplete();
+    }, 2000); // Display the welcome screen for 2 seconds
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, [onLoadingComplete]);
 
   const developers = [
@@ -35,9 +25,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-8">ByteCart</h1>
-      <div className="w-3/4 max-w-md">
-        <Progress value={progress} className="w-full h-3 mb-4" />
-        <p className="text-center text-lg font-medium">{progress}% Loading...</p>
+      <div className="w-3/4 max-w-md text-center">
+        <p className="text-lg font-medium">Welcome</p>
       </div>
       <div className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">Developed by:</p>
