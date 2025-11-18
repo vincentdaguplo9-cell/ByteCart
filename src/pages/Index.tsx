@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import { MadeWithZeninClan } from "@/components/made-with-zenin-clan"; // Updated import
 import CategorySelector from "@/components/bytecart/CategorySelector";
 import ProductList from "@/components/bytecart/ProductList";
 import ProductDetails from "@/components/bytecart/ProductDetails";
@@ -125,7 +125,7 @@ const Index = () => {
         </>
       )}
 
-      <MadeWithDyad />
+      <MadeWithZeninClan /> {/* Updated component usage */}
     </div>
   );
 };
